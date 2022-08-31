@@ -1,19 +1,15 @@
 <template>
   <div id="app">
     <NavBar />
+    <DynamicComponent />
     <component :is="currentView" />
   </div>
 </template>
 <script>
-import HomePage from "./pages/HomePage.vue";
-import AboutPage from "./pages/AboutPage.vue";
+import routes from "../src/routes.js";
 import NotFound from "./pages/NotFound.vue";
 import NavBar from "./components/NavBar.vue";
-
-const routes = {
-  "/": HomePage,
-  "/about": AboutPage,
-};
+import DynamicComponent from "./components/dynamic/DynamicComponent.vue";
 
 export default {
   data() {
@@ -31,7 +27,7 @@ export default {
       this.currentPath = window.location.hash;
     });
   },
-  components: { NavBar },
+  components: { NavBar, DynamicComponent },
 };
 </script>
 
