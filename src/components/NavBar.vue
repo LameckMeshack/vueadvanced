@@ -1,31 +1,43 @@
 <template>
-  <div>
-    <div class="navbar">
-      <div class="navbar__logo">
-        <img src="../assets/logo.png" width="50" height="50" alt="logo" />
-      </div>
-      <div class="navbar__links">
-        <a class="link" href="#" @click="goTo('/')">Home</a>
-        <a class="link" href="#">Products</a>
-        <a class="link" href="#" @click="goTo('/about')">About</a>
-      </div>
+  <div class="navbar">
+    <div class="navbar__logo">
+      <img src="../assets/logo.png" width="50" height="50" alt="logo" />
     </div>
-
-    <AppRouter />
+    <div class="navbar__links">
+      <a v-bind:href="href" v-bind:class="{ active: isActive }" v-on:click="go"
+        >Home</a
+      >
+      <a v-bind:href="href" v-bind:class="{ active: isActive }" v-on:click="go"
+        >Products</a
+      >
+      <a v-bind:href="href" v-bind:class="{ active: isActive }" v-on:click="go"
+        >About</a
+      >
+    </div>
   </div>
 </template>
-<!-- javascript -->
 <script>
-import AppRouter from "./AppRouter.vue";
+import routes from "../routes";
+
 export default {
-  name: "NavBar",
-  methods: {
-    goTo(route) {
-      window.location = route;
-      event.preventDefault();
+  props: {
+    href: {
+      type: String,
+      required: true,
     },
   },
-  components: { AppRouter },
+  computed: {
+    isActive() {
+      return this.href === this.$root.currentRoute;
+    },
+  },
+  methods: {
+    go(event) {
+      event.preventDefault();
+      this.$root.currentRoute = this.href;
+      window.history.pushState(null, routes[this.href], this.href);
+    },
+  },
 };
 </script>
 
@@ -63,5 +75,8 @@ a {
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+.active {
+  color: cornflowerblue;
 }
 </style>
