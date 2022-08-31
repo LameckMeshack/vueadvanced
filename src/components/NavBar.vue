@@ -5,27 +5,19 @@
         <img src="../assets/logo.png" width="50" height="50" alt="logo" />
       </div>
       <div class="navbar__links">
-        <a class="link" href="#" @click="goTo('/')">Home</a>
-        <a class="link" href="#">Products</a>
-        <a class="link" href="#" @click="goTo('/about')">About</a>
+        <a class="link" href="#/">Home</a>
+        <a class="link" href="#/about">About</a>
+        <a class="link" href="#/scacs">Contact</a>
       </div>
     </div>
 
-    <AppRouter />
+    <global-component />
   </div>
 </template>
 <!-- javascript -->
 <script>
-import AppRouter from "./AppRouter.vue";
 export default {
   name: "NavBar",
-  methods: {
-    goTo(route) {
-      window.location = route;
-      event.preventDefault();
-    },
-  },
-  components: { AppRouter },
 };
 </script>
 
@@ -38,6 +30,7 @@ export default {
   padding: 1rem 2rem;
   background-color: rgb(9, 143, 85);
   box-shadow: 0 4px 4px rgba(13, 1, 1, 0.872);
+  /* margin-bottom: 30px; */
 }
 .navbar__logo {
   margin-left: 50px;
