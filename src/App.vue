@@ -2,6 +2,7 @@
   <div id="app">
     <NavBar />
     <DynamicComponent />
+    <AsyncComp />
     <component :is="currentView" />
   </div>
 </template>
@@ -10,8 +11,20 @@ import routes from "../src/routes.js";
 import NotFound from "./pages/NotFound.vue";
 import NavBar from "./components/NavBar.vue";
 import DynamicComponent from "./components/dynamic/DynamicComponent.vue";
+import AsyncComp from "./components/AsyncComponents/AsyncComp.vue";
 
 export default {
+  // const AsyncComponent = () => ({
+  // component: new Promise(resolve => {
+  //   setTimeout(() => {
+  //     resolve(HelloWord);
+  //   }, 1000);
+  // }),
+  //   loading: Loading,
+  //   error: Error,
+  //   delay: 0,
+  //   timeout: 3000
+  // }),
   data() {
     return {
       currentPath: window.location.hash,
@@ -27,7 +40,7 @@ export default {
       this.currentPath = window.location.hash;
     });
   },
-  components: { NavBar, DynamicComponent },
+  components: { NavBar, DynamicComponent, AsyncComp },
 };
 </script>
 
