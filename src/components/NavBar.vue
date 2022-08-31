@@ -5,9 +5,10 @@
         <img src="../assets/logo.png" width="50" height="50" alt="logo" />
       </div>
       <div class="navbar__links">
-        <a class="link" href="#" @click="goTo('/')">Home</a>
-        <a class="link" href="#">Products</a>
-        <a class="link" href="#" @click="goTo('/about')">About</a>
+        <AppRouter>Home</AppRouter>
+        <AppRouter>About</AppRouter>
+        <!-- <a class="link" href="#">Products</a>
+        <a class="link" href="#" @click="goTo('/about')">About</a> -->
       </div>
     </div>
 
@@ -15,7 +16,7 @@
   </div>
 </template>
 <!-- javascript -->
-<script>
+<!-- <script>
 import AppRouter from "./AppRouter.vue";
 export default {
   name: "NavBar",
@@ -27,9 +28,8 @@ export default {
   },
   components: { AppRouter },
 };
-</script>
+</script> -->
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .navbar {
   display: flex;
