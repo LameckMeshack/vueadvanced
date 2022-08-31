@@ -10,8 +10,6 @@
         <a class="link" href="#/scacs">Contact</a>
       </div>
     </div>
-
-    <global-component />
   </div>
 </template>
 <!-- javascript -->
