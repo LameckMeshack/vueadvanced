@@ -1,9 +1,37 @@
-<script>
+<!-- <script>
 export default {
   name: "LifeCycle",
   beforeCreate() {
     alert("beforCreate hook has been called");
     console.log("beforCreate hook has been called");
+  },
+};
+</script> -->
+<!-- <script>
+export default {
+  name: "LifeCycle",
+  data() {
+    return {
+      books: 0,
+    };
+  },
+  created() {
+    alert("Created hook has been called");
+    console.log(`books is of type ${typeof this.books}`);
+  },
+};
+</script> -->
+<!-- <script>
+export default {
+  beforeMount() {
+    alert("beforeMount is called");
+  },
+};
+</script> -->
+<script>
+export default {
+  mounted() {
+    alert("mounted has been called");
   },
 };
 </script>
