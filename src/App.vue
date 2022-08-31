@@ -4,6 +4,7 @@
     <DynamicComponent />
     <AsyncComp />
     <button @click="accessed">Alert Root Data</button>
+    <LifeCycle />
     <component :is="currentView" />
   </div>
 </template>
@@ -13,6 +14,7 @@ import NotFound from "./pages/NotFound.vue";
 import NavBar from "./components/NavBar.vue";
 import DynamicComponent from "./components/dynamic/DynamicComponent.vue";
 import AsyncComp from "./components/AsyncComponents/AsyncComp.vue";
+import LifeCycle from "./components/LifeCycle.vue";
 
 export default {
   // const AsyncComponent = () => ({
@@ -46,7 +48,7 @@ export default {
       this.currentPath = window.location.hash;
     });
   },
-  components: { NavBar, DynamicComponent, AsyncComp },
+  components: { NavBar, DynamicComponent, AsyncComp, LifeCycle },
 };
 </script>
 
