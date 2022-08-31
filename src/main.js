@@ -6,5 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 Vue.config.productionTip = false;
 
 new Vue({
+  data: {
+    rootValue: "Hello Wordthis ha is from the root component ",
+  },
+
   render: (h) => h(App),
 }).$mount("#app");

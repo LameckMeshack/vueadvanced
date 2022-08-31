@@ -3,6 +3,7 @@
     <NavBar />
     <DynamicComponent />
     <AsyncComp />
+    <button @click="accessed">Alert Root Data</button>
     <component :is="currentView" />
   </div>
 </template>
@@ -33,6 +34,11 @@ export default {
   computed: {
     currentView() {
       return routes[this.currentPath.slice(1) || "/"] || NotFound;
+    },
+  },
+  methods: {
+    accessed() {
+      alert(this.$root.rootValue);
     },
   },
   mounted() {
