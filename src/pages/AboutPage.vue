@@ -1,9 +1,3 @@
 <template>
-  <h1>ABOUT</h1>
+  <h2>About</h2>
 </template>
-<script>
-export default {
-  name: "AboutPage",
-};
-</script>
-<style></style>
