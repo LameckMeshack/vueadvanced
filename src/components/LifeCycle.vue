@@ -28,10 +28,33 @@ export default {
   },
 };
 </script> -->
-<script>
+<!-- <script>
 export default {
   mounted() {
     alert("mounted has been called");
+  },
+};
+</script> -->
+<template>
+  <div>
+    <div>{{ hello }}</div>
+    <h1>hello</h1>
+  </div>
+</template>
+<script>
+export default {
+  name: "LifeCycle",
+  data() {
+    return {
+      books: 0,
+      hello: "welcome to Vue JS",
+    };
+  },
+  beforeUpdate() {
+    alert("beforeUpdate hook has been called");
+  },
+  mounted() {
+    this.$data.hello = "lalalalallalalalalaalal";
   },
 };
 </script>
