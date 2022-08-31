@@ -1,18 +1,14 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <NavBar />
+  </div>
 </template>
-
 <script>
+import NavBar from "./components/NavBar.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: { NavBar },
 };
 </script>
-
-<style>
-#app {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-</style>
+<style></style>
