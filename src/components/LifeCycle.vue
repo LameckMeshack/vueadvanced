@@ -35,13 +35,13 @@ export default {
   },
 };
 </script> -->
-<template>
+<!-- <template>
   <div>
     <div>{{ hello }}</div>
     <h1>hello</h1>
   </div>
-</template>
-<script>
+</template> -->
+<!-- <script>
 export default {
   name: "LifeCycle",
   data() {
@@ -57,11 +57,57 @@ export default {
     this.$data.hello = "lalalalallalalalalaalal";
   },
 };
-</script>
+</script> -->
+<!-- 
+<template>
+  <div>{{ hello }}</div>
+</template>
+<script>
+export default {
+  name: "LifeCycle",
+  data() {
+    return {
+      books: 0,
+      hello: "welcome to Vue JS",
+    };
+  },
+  beforeUpdate() {
+    alert("beforeUpdate hook has been called");
+  },
+  updated() {
+    alert("Updated hook has been called");
+  },
+  mounted() {
+    this.$data.hello = "lalalalallalalalalaalal";
+  },
+};
+</script> -->
+
 <template>
   <div></div>
 </template>
-
+<!-- <script>
+export default {
+  name: "LifeCycle",
+  data() {
+    return {
+      books: 0,
+    };
+  },
+  beforeDestroy() {
+    this.books = null;
+    delete this.books;
+  },
+};
+</script> -->
+<script>
+export default {
+  destroyed() {
+    this.$destroy();
+    console.log(this);
+  },
+};
+</script>
 <style scoped>
 h3 {
   margin: 40px 0 0;
