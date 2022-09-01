@@ -21,8 +21,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import "../assets/css/style.scss";
+
 .navbar {
   display: flex;
+  width: 1800px;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
