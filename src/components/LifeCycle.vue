@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 export default {
   name: "LifeCycle",
   beforeCreate() {
@@ -6,7 +6,7 @@ export default {
     console.log("beforCreate hook has been called");
   },
 };
-</script> -->
+</script>
 <!-- <script>
 export default {
   name: "LifeCycle",
@@ -100,14 +100,14 @@ export default {
   },
 };
 </script> -->
-<script>
+<!-- <script>
 export default {
   destroyed() {
     this.$destroy();
     console.log(this);
   },
 };
-</script>
+</script> -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
